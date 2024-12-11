@@ -1,27 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Exercise 1</title>
-        <link rel="stylesheet" href="styles.css"/>
-    </head>
-    <body>
-       <h1>Ciao!</h1>  <!--Heading di livello 1-->
-       <h2>Benvenuti</h2>  <!--Heading di livello 2-->
-       <p>Paragrafo</p>  <!--paragrafo-->
-       <p class="highlight">Paragrafo2</p>  <!--paragrafo-->
-       <p class="highlight bigger">Paragrafo3</p>  <!--paragrafo-->
-       <a href="https://google.it">Link</a>  <!--link-->
-       <ul>
-            <li> elemento</li>
-            <li> elemento2</li>
-       </ul> <!--lsita non ordinata-->
-       <ol>
-            <li> elemento</li>
-            <li> elemento2</li>
-       </ol> <!--lsita ordinata-->
-       <img src="package\package\exercise-1\coding.jpg" alt="This is the image promoting"/>
-       <div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  </head>
 
-       </div>
-    </body>
+  <body>
+    <nav>
+      <ul class="skills-list">
+        <li><a href="#Home" targer="_blank">Home</a></li>
+        <li>Location</li>
+        <li class="empty"></li>
+        <li><a href="https://google.it" targer="_blank">Lista</a></li>
+        <li>RSVP</li>
+        <li><a href="#Contact" targer="_blank">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <div class="container">
+        <div class="row">
+          <!--left coloumn-->
+          <div class="col-sm">
+            <h1>Nome e <br/> nome </h1>
+            <ul>
+              <li>altre info</li>
+              <li>altre info</li>
+            </ul>
+            <a href="link" class="button">link</a>
+          </div>
+          <!--right coloumn-->
+          <div class="col-sm">
+            <figure>
+              <img src="img/jane.jpg" class="intro-img" alt="foto"/>
+              <figcaption>Photo by</figcaption>
+            </figure>       
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <section>
+      <ul>
+        <li> lista</li>
+        <li> lista2</li>
+      </ul>
+    </section>
+
+    <!--projects-->
+
+    <section class="project blue">
+      <div class="container">
+        <div class="row">
+          <!--left coloumn-->
+          <div class="col-sm">
+            <figure>
+              <img src="img/cosmetics.jpg" alt="immagine 2"/>
+              <figcaption class="right-alignment">Photo by</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm">
+            <h2> heading 2</h2>
+            <p> testo vario</p>
+            <a href="link" class="button">Read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="project">
+      <div class="container">
+        <div class="row">
+          <!--left coloumn-->
+          <div class="col-sm right-alignment" >
+            <h2 > heading 3</h2>
+            <p> testo vario2</p>
+            <a href="link" class="button">Read more2</a>
+          </div>
+          <div class="col-sm">
+            <figure>
+              <img src="img/dashboard-app.jpg" alt="immagine 3"/>
+              <figcaption>Photo by3</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="project blue">
+      <div class="container">
+        <div class="row">
+          <!--left coloumn-->
+          <div class="col-6"> <!--cambio larghezza colonna-->
+            <figure>
+              <img src="img/ipad-app.jpg" alt="immagine 4"/>
+              <figcaption class="right-alignment">Photo by4</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm">
+            <h2> heading </br>4</h2>
+            <p> testo vario3</p>
+            <a href="link" class="button">Read more3</a>
+          </div>
+          <!-- <div class="col-sm">
+            <h2> heading </br>4</h2>
+            <p> testo vario3</p>
+            <a href="link">Read more3</a>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <footer id="Contact">
+       <h2> domande? email</h2>
+       <p>designed by Sofia</p>
+    </footer>
+  </body>
 </html>
