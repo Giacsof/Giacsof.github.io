@@ -3,13 +3,20 @@ body{
     /*background-color: lightcyan;*/
     font-size: 15px;
 }
+body {
+    background-image: url('../img/background.svg'); /* Sostituisci con il percorso corretto dell'immagine */
+    background-size: cover; /* Copre tutto lo schermo */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Non ripete l'immagine */
+    background-attachment: fixed; /* Sfondo fisso mentre si scorre la pagina */
+}
 
 header{
     top: 100px;
     position: relative;
     margin-bottom: 220px;
     /* background-image: url('../img/background.png');*/
-    background-color: #849b89;
+    /* background-color: #849b89; */
     background-repeat: repeat;
     background-size: cover;
     /* background-position-y: -145px ; */
