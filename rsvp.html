@@ -22,7 +22,7 @@
           window.location.href = 'login.html'; // Reindirizza se non autenticato
       }
     </script>
-    
+
     <!-- Lista Pagine in alto -->
     <nav>
       <ul class="skills-list">
@@ -101,35 +101,36 @@
       </form>
 
       <p id="rsvp-message"></p>
+
+      <script>
+        document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+        
+            const formData = {
+                name: document.getElementById('name').value,
+                surname: document.getElementById('surname').value,
+                attendance: document.getElementById('attendance').value,
+                menu: document.getElementById('menu').value,
+                note: document.getElementById('note').value,
+                message: document.getElementById('message').value
+            };
+        
+            try {
+                const response = await fetch('http://localhost:3000/rsvp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+        
+                const data = await response.json();
+                document.getElementById('response-message').textContent = data.message;
+            } catch (error) {
+                document.getElementById('response-message').textContent = 'Errore nell’invio RSVP';
+            }
+        });
+        </script>
+        
   </div>
-
-  <script>
-      document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
-          e.preventDefault();
-
-          const attendance = document.getElementById('attendance').value;
-          const message = document.getElementById('message').value;
-          const token = localStorage.getItem('token');
-
-          if (!token) {
-              alert('Devi effettuare il login per confermare la tua presenza.');
-              window.location.href = 'login.html';
-              return;
-          }
-
-          const response = await fetch('http://localhost:3000/rsvp', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${token}`
-              },
-              body: JSON.stringify({ attendance, message })
-          });
-
-          const data = await response.json();
-          document.getElementById('rsvp-message').textContent = data.message;
-      });
-  </script>
   </body>
 </html>
 
