@@ -19,12 +19,13 @@
     <!-- Lista Pagine in alto -->
     <nav>
       <ul class="skills-list">
-        <li><a href="index.html" targer="_blank">Home</a></li>
-        <li><a href="index.html#Location" targer="_blank">Location</a></li>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="index.html#Location" >Location</a></li>
+        <li><a href="" >Lista</a></li>
         <li class="empty"></li>
-        <li><a href="https://google.it" targer="_blank">Lista</a></li>
-        <li><a href="rsvp.html" targer="_blank">RSVP</a></li>
-        <li><a href="#Contact" targer="_blank">Contact</a></li>
+        <li><a href="rsvp.html" >RSVP</a></li>
+        <li><a href="#Contact" >Contact</a></li>
+        <li><a href="#login" >Login</a></li>
       </ul>
     </nav>
 
@@ -49,7 +50,7 @@
       </div>
     </header>
     
-        <div class="login-container">
+        <div id="login" class="login-container">
         <h2>Accedi</h2>
         <form id="login-form">
             <input type="text" id="username" placeholder="Username" required>
@@ -81,6 +82,7 @@
                 document.getElementById('error-message').textContent = data.message;
             }
         });
+
     </script>
     <footer>
         <h2> Dubbi? Contatta qui</h2>

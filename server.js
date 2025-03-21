@@ -139,6 +139,8 @@ app.post('/rsvp', (req, res) => {
     res.json({ message: 'RSVP salvato con successo!' });
 });
 
+
+
 // Avvio server
 app.listen(PORT, () => {
     console.log(`✅ Server in ascolto su http://localhost:${PORT}`);

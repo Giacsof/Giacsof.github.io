@@ -14,6 +14,7 @@
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    
   </head>
 
   <body>
@@ -23,57 +24,33 @@
       if (!localStorage.getItem('token')) {
           window.location.href = 'login.html'; // Reindirizza se non autenticato
       }
-  
-      // document.getElementById('reset-request-form').addEventListener('submit', async (e) => {
-      //     e.preventDefault();
-      //     const email = document.getElementById('email').value;
-          
-      //     const response = await fetch('http://localhost:3000/auth/reset-request', {
-      //         method: 'POST',
-      //         headers: { 'Content-Type': 'application/json' },
-      //         body: JSON.stringify({ email })
-      //     });
-          
-      //     const data = await response.json();
-      //     document.getElementById('reset-message').textContent = data.message;
-      // });
-  
-      // // Simuliamo il recupero del token dalla URL (nella realtà arriva via email)
-      // const urlParams = new URLSearchParams(window.location.search);
-      // const token = urlParams.get('token');
-      // if (token) {
-      //     document.getElementById('reset-form-container').style.display = 'block';
-      //     document.getElementById('reset-token').value = token;
-      // }
-  
-      // document.getElementById('reset-password-form').addEventListener('submit', async (e) => {
-      //     e.preventDefault();
-      //     const newPassword = document.getElementById('new-password').value;
-      //     const token = document.getElementById('reset-token').value;
-          
-      //     const response = await fetch('http://localhost:3000/auth/reset-password', {
-      //         method: 'POST',
-      //         headers: { 'Content-Type': 'application/json' },
-      //         body: JSON.stringify({ token, newPassword })
-      //     });
-          
-      //     const data = await response.json();
-      //     alert(data.message);
-      //     if (response.ok) {
-      //         window.location.href = 'home.html';
-      //     }
-      // });
+      document.addEventListener("DOMContentLoaded", function() {
+          const logoutBtn = document.getElementById('logout-btn');
+          if (logoutBtn) { // Controlla che l'elemento esista prima di aggiungere l'event listener
+              logoutBtn.addEventListener('click', (event) => {
+                  event.preventDefault();
+                  localStorage.removeItem('token');
+                  window.location.href = 'login.html';
+              });
+          } else {
+              console.error("Errore: logout-btn non trovato!");
+          }
+      });
+    </script>
+
+
   </script>
   
   <!-- Lista Pagine in alto -->
     <nav>
       <ul class="skills-list">
-        <li><a href="#Home" targer="_blank">Home</a></li>
-        <li><a href="#Location" targer="_blank">Location</a></li>
+        <li><a href="#Home" >Home</a></li>
+        <li><a href="#Location" >Location</a></li>
+        <li><a href="" >Lista</a></li>
         <li class="empty"></li>
-        <li><a href="https://google.it" targer="_blank">Lista</a></li>
-        <li><a href="rsvp.html" targer="_blank">RSVP</a></li>
-        <li><a href="#Contact" targer="_blank">Contact</a></li>
+        <li><a href="rsvp.html" >RSVP</a></li>
+        <li><a href="#Contact" >Contact</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
       </ul>
     </nav>
 
@@ -101,8 +78,8 @@
     <section>
       <div class="container">
         <ul>
-          <li> Scrivo qualcosa in lista</li>
-          <li> Ciao</li>
+          <li> Siamo felicissimi di annunciare il nostro matrimonio!</li>
+          <li> Vorremmo condividere con te questa giornata speciale!</li>
         </ul>
       </div>
     </section>
@@ -143,23 +120,10 @@
     <section class="project blue">
       <div class="container">
         <div class="row">
-          <!--left coloumn-->
-          <!-- <div class="col-6">  -->
-            <!-- <figure> -->
-              <!-- <img src="img/ipad-app.jpg" alt="immagine 4"/> -->
-              <!-- <figcaption class="right-alignment">Photo by4</figcaption> -->
-            <!-- </figure> -->
-          <!-- </div> -->
           <div class="col-sm">
             <h2> Dai la tua conferma </br></h2>
-            <p  class="paragraph2"> descrizione </p>
-            <a href="rsvp.html" class="button">RSVP</a>
+            <a href="rsvp.html" class="button">Conferma</a>
           </div>
-          <!-- <div class="col-sm">
-            <h2> heading </br>4</h2>
-            <p> testo vario3</p>
-            <a href="link">Read more3</a>
-          </div> -->
         </div>
       </div>
     </section>

@@ -21,6 +21,18 @@
       if (!localStorage.getItem('token')) {
           window.location.href = 'login.html'; // Reindirizza se non autenticato
       }
+      document.addEventListener("DOMContentLoaded", function() {
+          const logoutBtn = document.getElementById('logout-btn');
+          if (logoutBtn) { // Controlla che l'elemento esista prima di aggiungere l'event listener
+              logoutBtn.addEventListener('click', (event) => {
+                  event.preventDefault();
+                  localStorage.removeItem('token');
+                  window.location.href = 'login.html';
+              });
+          } else {
+              console.error("Errore: logout-btn non trovato!");
+          }
+      });
     </script>
 
     <!-- Lista Pagine in alto -->
@@ -28,10 +40,11 @@
       <ul class="skills-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#Location" >Location</a></li>
+        <li><a href="" >Lista</a></li>
         <li class="empty"></li>
-        <li><a href="https://google.it" >Lista</a></li>
         <li><a href="rsvp.html" >RSVP</a></li>
         <li><a href="#Contact" >Contact</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
       </ul>
     </nav>
 
