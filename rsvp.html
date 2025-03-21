@@ -16,6 +16,13 @@
   </head>
 
   <body>
+    <script>
+      // Controlla se l'utente è autenticato
+      if (!localStorage.getItem('token')) {
+          window.location.href = 'login.html'; // Reindirizza se non autenticato
+      }
+    </script>
+    
     <!-- Lista Pagine in alto -->
     <nav>
       <ul class="skills-list">
