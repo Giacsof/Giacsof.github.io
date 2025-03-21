@@ -5,13 +5,14 @@ body{
 }
 
 header{
-    top: 70px;
+    top: 100px;
     position: relative;
     margin-bottom: 220px;
-    background-image: url('../img/background.png');
-    background-repeat: no-repeat;
+    /* background-image: url('../img/background.png');*/
+    background-color: #849b89;
+    background-repeat: repeat;
     background-size: cover;
-    background-position-y: -145px ;
+    /* background-position-y: -145px ; */
 
 }
 body, ul{
@@ -21,12 +22,18 @@ body, ul{
 
 p {
     color: pink;
-    background: grey;
-    line-height: 150%;
+    /* background: rgb(128, 128, 128); */
+    line-height: 30%;
+}
+p {
+    color: pink;
+    /* background: rgb(128, 128, 128); */
+    line-height: 130%;
 }
 
 h2, p, .skills-list{
-    font-family: "Antic Slab", serif;
+    /* font-family: "Antic Slab", serif; */
+    font-family: "Dancing Script", serif;
     color: black;
 }
 
@@ -37,7 +44,7 @@ a{
 
 /* classe inizia col . */
 .highlight{ 
-    background: cyan;
+    background: rgb(141, 240, 182);
     font-size: 20px;
     color: white;
 }
@@ -53,9 +60,9 @@ img{
     /*limiting the width of the image so it takes 100% of the parent*/
     max-width: 100%;
 }
-
+/* Background Barra */
 nav{
-    background-color: #DBEBF4;
+    background-color: #849b89;
     position: fixed;
     z-index: 1;
     width: 100%;
@@ -79,10 +86,11 @@ nav ul{
 
 h1{
     font-size: 100px;
-    line-height: 130%;
+    line-height: 100%;
+    text-align: center;
 }
 h2{
-    font-size: 30px;
+    font-size: 60px;
     line-height: 130%;
 }
 h1, h2{
@@ -133,9 +141,9 @@ figcaption{
     margin: 30px 0;
     padding: 50px;
 }
-
+/* Background spots */
 .blue{
-    background-color: #DBEBF4;
+    background-color: #accab3;
 }
 
 .project .button{
@@ -168,4 +176,13 @@ nav li a{
 
 nav li a:hover{
     text-decoration: underline;
+}
+
+.paragraph1{
+    text-align: center;
+    font-size: 40px;
+}
+.paragraph2{
+    font-size: 20px;
+    line-height: 140%;
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
     <!-- Lista Pagine in alto -->
     <nav>
       <ul class="skills-list">
-        <li><a href="#Home" targer="_blank">Home</a></li>
+        <li><a href="index.html" targer="_blank">Home</a></li>
         <li>Location</li>
         <li class="empty"></li>
         <li><a href="https://google.it" targer="_blank">Lista</a></li>
@@ -49,74 +49,19 @@
       </div>
     </header>
 
-    <section>
-      <div class="container">
-        <ul>
-          <li> Scrivo qualcosa in lista</li>
-          <li> Ciao</li>
-        </ul>
-      </div>
-    </section>
 
-    <section class="project blue">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <figure>
-              <img src="img/chiesa.jpg" alt="immagine 2"/>
-            </figure>
-          </div>
-          <div class="col-sm">
-            <h2> Chiesa San Nicola </h2>
-            <p class="paragraph2"> Agrigento <br/> Ore 15:30</p>
-            <a href="link" class="button">Maps</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="project">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm right-alignment" >
-            <h2 > Castello Ducale Colonna</h2>
-            <p class="paragraph2"> Joppolo Giancaxio, Agrigento <br/>Ore 19:00</p> 
-            
-            <a href="link" class="button">Maps</a>
-          </div>
-          <div class="col-sm">
-            <figure>
-              <img src="img/Castello-ducale-colonna.jpg" alt="immagine 3"/>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="project blue">
-      <div class="container">
-        <div class="row">
-          <!--left coloumn-->
-          <!-- <div class="col-6">  -->
-            <!-- <figure> -->
-              <!-- <img src="img/ipad-app.jpg" alt="immagine 4"/> -->
-              <!-- <figcaption class="right-alignment">Photo by4</figcaption> -->
-            <!-- </figure> -->
-          <!-- </div> -->
-          <div class="col-sm">
-            <h2> Dai la tua conferma </br></h2>
-            <p  class="paragraph2"> descrizione </p>
-            <a href="link" class="button">RSVP</a>
-          </div>
-          <!-- <div class="col-sm">
-            <h2> heading </br>4</h2>
-            <p> testo vario3</p>
-            <a href="link">Read more3</a>
-          </div> -->
-        </div>
-      </div>
-    </section>
+    <form action="login.php" method="post">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <a href="reset.html">Password dimenticata?</a>
+    
     <footer id="Contact">
        <h2> Dubbi? Contatta qui</h2>
        <p>designed by Sofia</p>
     </footer>
   </body>
 </html>
+
+
