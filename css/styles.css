@@ -187,6 +187,44 @@ nav li a:hover{
     line-height: 140%;
 }
 
+#rsvp-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px; /* Spazio tra gli elementi */
+    
+}
+
+#rsvp-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#rsvp-form input,
+#rsvp-form select,
+#rsvp-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Per allineare le label accanto ai campi */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spazio tra label e campo */
+    
+}
+
+.form-group label {
+    width: 120px; /* Stessa larghezza per tutte le label */
+    text-align: right;
+}
+
+
 @font-face {
     font-family: 'Dancing Script';
     src: url('fonts/DancingScript-Regular.woff2') format('woff2'),

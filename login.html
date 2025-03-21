@@ -23,7 +23,7 @@
         <li>Location</li>
         <li class="empty"></li>
         <li><a href="https://google.it" targer="_blank">Lista</a></li>
-        <li><a href="login.html" targer="_blank">RSVP</a></li>
+        <li><a href="rsvp.html" targer="_blank">RSVP</a></li>
         <li><a href="#Contact" targer="_blank">Contact</a></li>
       </ul>
     </nav>
@@ -48,15 +48,40 @@
         <p  class="paragraph1"> 09 Settembre 2025 <br/> Agrigento, Sicilia </p>
       </div>
     </header>
-
-
-    <form action="login.php" method="post">
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
-    <a href="reset.html">Password dimenticata?</a>
     
+        <div class="login-container">
+        <h2>Accedi</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <!-- <p><a href="reset.html">Password dimenticata?</a></p> -->
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            const response = await fetch('http://localhost:3000/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            
+            const data = await response.json();
+            if (response.ok) {
+                alert('Login effettuato!');
+                localStorage.setItem('token', data.token);
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error-message').textContent = data.message;
+            }
+        });
+    </script>
     <footer>
         <h2> Dubbi? Contatta qui</h2>
         <p>designed by Sofia</p>

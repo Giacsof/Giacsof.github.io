@@ -1,0 +1,129 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding WebSite</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Lista Pagine in alto -->
+    <nav>
+      <ul class="skills-list">
+        <li><a href="index.html" targer="_blank">Home</a></li>
+        <li>Location</li>
+        <li class="empty"></li>
+        <li><a href="https://google.it" targer="_blank">Lista</a></li>
+        <li><a href="rsvp.html" targer="_blank">RSVP</a></li>
+        <li><a href="#Contact" targer="_blank">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <!--left coloumn-->
+          <div class="col-sm">
+            <h1>Giacomo & <br/> Sofia </h1>
+          </div>
+          <!--right coloumn-->
+          <div class="col-sm">
+            <figure>
+              <!-- <img src="img/vespa-removebg-preview.png" class="intro-img" alt="foto"/> -->
+              <div style="height: 100px;"></div>
+              <img src="img/vespa-removebg-preview.png" alt="Immagine di due sposini su una vespa rossa" />
+              <!-- <figcaption>Photo by</figcaption> -->
+            </figure>       
+          </div>
+        </div>
+        <p  class="paragraph1"> 09 Settembre 2025 <br/> Agrigento, Sicilia </p>
+      </div>
+    </header>
+    
+    <div class="rsvp-container">
+      <h2>RSVP</h2>
+      <p>Per favore, conferma la tua presenza al nostro matrimonio!</p>
+
+      <form id="rsvp-form">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" required placeholder="Nome">
+      </div>
+
+      <div class="form-group">
+          <label for="surname">Cognome:</label>
+          <input type="text" id="surname" required placeholder="Cognome">
+      </div>
+        <div class="form-group">
+          <label for="attendance">Parteciperai?</label>
+          <select id="attendance" required>
+              <option value="yes">Sì, ci sarò!</option>
+              <option value="no">Purtroppo no</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="menu">Tipo di Menù</label>
+          <select id="menu" required>
+              <option value="pesce">Pesce</option>
+              <option value="carne">Carne</option>
+              <option value="vegetariano">Vegetariano</option>
+              <option value="vegano">Vegano</option>
+              <option value="vegano">Senza Glutine</option>
+              <option value="vegano">Senza Lattosio</option>
+              <option value="vegano">Allergie o intolleranze (specifica nelle note) </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="note">Note menù:</label>
+          <textarea id="note" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="message">Messaggio:</label>
+          <textarea id="message" rows="4"></textarea>
+        </div>
+          <button type="submit">Invia RSVP</button>
+      </form>
+
+      <p id="rsvp-message"></p>
+  </div>
+
+  <script>
+      document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const attendance = document.getElementById('attendance').value;
+          const message = document.getElementById('message').value;
+          const token = localStorage.getItem('token');
+
+          if (!token) {
+              alert('Devi effettuare il login per confermare la tua presenza.');
+              window.location.href = 'login.html';
+              return;
+          }
+
+          const response = await fetch('http://localhost:3000/rsvp', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}`
+              },
+              body: JSON.stringify({ attendance, message })
+          });
+
+          const data = await response.json();
+          document.getElementById('rsvp-message').textContent = data.message;
+      });
+  </script>
+  </body>
+</html>
+
+

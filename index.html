@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,14 +17,62 @@
   </head>
 
   <body>
-    <!-- Lista Pagine in alto -->
+    
+    <script>
+      // Controlla se l'utente è autenticato
+      if (!localStorage.getItem('token')) {
+          window.location.href = 'login.html'; // Reindirizza se non autenticato
+      }
+  
+      document.getElementById('reset-request-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const email = document.getElementById('email').value;
+          
+          const response = await fetch('http://localhost:3000/auth/reset-request', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email })
+          });
+          
+          const data = await response.json();
+          document.getElementById('reset-message').textContent = data.message;
+      });
+  
+      // Simuliamo il recupero del token dalla URL (nella realtà arriva via email)
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+      if (token) {
+          document.getElementById('reset-form-container').style.display = 'block';
+          document.getElementById('reset-token').value = token;
+      }
+  
+      document.getElementById('reset-password-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const newPassword = document.getElementById('new-password').value;
+          const token = document.getElementById('reset-token').value;
+          
+          const response = await fetch('http://localhost:3000/auth/reset-password', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token, newPassword })
+          });
+          
+          const data = await response.json();
+          alert(data.message);
+          if (response.ok) {
+              window.location.href = 'home.html';
+          }
+      });
+  </script>
+  
+  <!-- Lista Pagine in alto -->
     <nav>
       <ul class="skills-list">
         <li><a href="#Home" targer="_blank">Home</a></li>
         <li>Location</li>
         <li class="empty"></li>
         <li><a href="https://google.it" targer="_blank">Lista</a></li>
-        <li><a href="login.html" targer="_blank">RSVP</a></li>
+        <li><a href="rsvp.html" targer="_blank">RSVP</a></li>
         <li><a href="#Contact" targer="_blank">Contact</a></li>
       </ul>
     </nav>
