@@ -35,6 +35,7 @@ h2, p, .skills-list{
     /* font-family: "Antic Slab", serif; */
     font-family: "Dancing Script", serif;
     color: black;
+    
 }
 
 a{
@@ -104,9 +105,10 @@ ul li{
 }
 
 .button{
-    border: 1px solid black;
+    border: 1px solid rgb(67, 117, 72);
+    background-color: #568860;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 10px 30px;
     margin-top: 40px;
     display: inline-block;
@@ -115,7 +117,8 @@ ul li{
 }
 
 .button:hover{
-    background: black;
+    background: rgb(61, 102, 65);
+    border: #354d3a;
     color: white;
 }
 
@@ -193,6 +196,31 @@ nav li a:hover{
     max-width: 400px;
     gap: 10px; /* Spazio tra gli elementi */
     
+}
+/* Center the RSVP form */
+.rsvp-container {
+    background: rgb(190, 201, 191);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(121, 28, 28, 0.1);
+    max-width: 500px;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    
+}
+.rsvp-container h2 {
+    margin-bottom: 5px; /* Reduce space below the heading */
+    margin-top: 5px;
+}
+
+.rsvp-container p {
+    margin-top: 0;
+    margin-bottom: 10px; /* Adjust spacing as needed */
+    font-size: large;
 }
 
 #rsvp-form label {
