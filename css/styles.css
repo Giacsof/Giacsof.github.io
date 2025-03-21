@@ -30,11 +30,6 @@ body, ul{
 p {
     color: pink;
     /* background: rgb(128, 128, 128); */
-    line-height: 30%;
-}
-p {
-    color: pink;
-    /* background: rgb(128, 128, 128); */
     line-height: 130%;
 }
 
@@ -44,6 +39,7 @@ h2, p, .skills-list{
     color: black;
     
 }
+
 
 a{
     text-decoration: none;
@@ -181,7 +177,7 @@ li.empty{
 
 nav li a{
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
 nav li a:hover{
@@ -191,9 +187,17 @@ nav li a:hover{
 .paragraph1{
     text-align: center;
     font-size: 40px;
+    color: #cca25e;
 }
-.paragraph2{
+.paragraph3{
     font-size: 20px;
+    line-height: 140%;
+}
+
+.paragraph2{
+    text-align: center;
+    color: #cca25e;
+    font-size: 30px;
     line-height: 140%;
 }
 
